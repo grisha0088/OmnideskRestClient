@@ -1,0 +1,28 @@
+﻿<Window x:Class="TryOmnidesk.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TryOmnidesk"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="1257">
+    <Grid>
+        <Button x:Name="button" Content="Последние обращения" HorizontalAlignment="Left" Margin="40,30,0,0" VerticalAlignment="Top" Width="140" Click="button_Click" RenderTransformOrigin="-0.165,-4.336"/>
+        <TextBox x:Name="textBox" Margin="40,149,40,39" TextWrapping="Wrap" RenderTransformOrigin="0.5,0.5">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0.048"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="0.499"/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <TextBox x:Name="countTextBox" HorizontalAlignment="Left" Height="23" Margin="195,48,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="getIssueButton" Content="Обращение по id" HorizontalAlignment="Left" Margin="40,85,0,0" VerticalAlignment="Top" Width="140" Click="getIssueButton_Click"/>
+        <TextBox x:Name="idTextBox" HorizontalAlignment="Left" Height="23" Margin="205,84,0,0" TextWrapping="Wrap" Text="2504837" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="getLablesButton" Content="Получить метки" HorizontalAlignment="Left" Margin="40,57,0,0" VerticalAlignment="Top" Width="140" Click="getLablesButton_Click" />
+        <TextBox x:Name="pageTextBox" HorizontalAlignment="Left" Height="23" Margin="344,48,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Window>
