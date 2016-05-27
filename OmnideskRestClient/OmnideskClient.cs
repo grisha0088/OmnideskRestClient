@@ -38,6 +38,7 @@ namespace OmnideskRestClient
                 var result = GetCasesAsString(page, step);
                 page++;
 
+                if(result == "{\n    \"case\": []\n}") return null;  
                 JObject iss = JObject.Parse(result);
                 foreach (JProperty issue in iss.Properties())
                 {
