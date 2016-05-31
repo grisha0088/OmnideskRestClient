@@ -39,13 +39,13 @@ namespace TryOmnidesk
 
         private void getLablesButton_Click(object sender, RoutedEventArgs e)
         {
-            var lables = OmnideskClient.GetLables(Int32.Parse(countTextBox.Text), Int32.Parse(pageTextBox.Text));
+            var lables = OmnideskClient.GetStaff(Int32.Parse(countTextBox.Text), Int32.Parse(pageTextBox.Text));
 
             int i = 0;
-            foreach (var lable in lables)
-            {
-                textBox.Text += ++i + " " + lable.label_id + " " + lable.label_title + System.Environment.NewLine;
-            }
+            //foreach (var lable in lables)
+            //{
+            //    textBox.Text += ++i + " " + lable.label_id + " " + lable.label_title + System.Environment.NewLine;
+            //}
         }
     }
 }

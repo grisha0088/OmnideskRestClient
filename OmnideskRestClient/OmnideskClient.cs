@@ -53,7 +53,6 @@ namespace OmnideskRestClient
             }
             return issues;
         }
-
         private string GetCasesAsString(int page, int limit)
         {
             var request = new RestRequest("cases.json", Method.GET);
@@ -88,6 +87,7 @@ namespace OmnideskRestClient
                     step = count + 100;
                 }
                 var result = GetLablesAsString(startFromPage, step);
+                if (result == "{\"LableContainer\":\"\"}") return null;
                 var lablelist = JsonConvert.DeserializeObject<LableList>(result);
                 foreach (var lableContainer in lablelist.LableContainer)
                 {
@@ -101,7 +101,6 @@ namespace OmnideskRestClient
             }
             return lables;
         }
-
         private string GetLablesAsString(int page, int limit)
         {
             var request = new RestRequest("labels.json", Method.GET);
@@ -128,6 +127,7 @@ namespace OmnideskRestClient
                     step = count + 100;
                 }
                 var result = GetStaffAsString(startFromPage, step);
+                if (result == "{\"StaffContainer\":\"\"}") return null;
                 var stafflist = JsonConvert.DeserializeObject<StaffList>(result);
                 foreach (var staffContainer in stafflist.StaffContainer)
                 {
@@ -141,7 +141,6 @@ namespace OmnideskRestClient
             }
             return lables;
         }
-
         private string GetStaffAsString(int page, int limit)
         {
             var request = new RestRequest("staff.json", Method.GET);
@@ -168,6 +167,7 @@ namespace OmnideskRestClient
                     step = count + 100;
                 }
                 var result = GetGroupsAsString(startFromPage, step);
+                if (result == "{\"GroupContainer\":\"\"}") return null;
                 var grouplist = JsonConvert.DeserializeObject<GroupList>(result);
                 foreach (var groupContainer in grouplist.GroupContainer)
                 {
@@ -181,7 +181,6 @@ namespace OmnideskRestClient
             }
             return groups;
         }
-
         private string GetGroupsAsString(int page, int limit)
         {
             var request = new RestRequest("groups.json", Method.GET);
