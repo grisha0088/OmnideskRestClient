@@ -59,6 +59,8 @@ namespace OmnideskRestClient
             request.AddHeader("Content-Type", "application/json");
             request.AddParameter("limit", limit);
             request.AddParameter("page", page);
+            //сортировка от новых к старым
+            request.AddParameter("sort", "updated_at_desc");
             // execute the request
             var response = RestClient.Execute(request);
             return response.Content; // raw content as string
